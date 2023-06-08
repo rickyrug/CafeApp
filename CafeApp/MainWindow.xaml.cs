@@ -25,9 +25,17 @@ namespace CafeApp
             InitializeComponent();
         }
 
-        private void Button_Add(object sender, RoutedEventArgs e)
+        private void btnMoveClick(object sender, RoutedEventArgs e)
         {
-            this.btnAddCustomer.Content = "Added!!!";
+            //var valueColumnProperty = (int) this.gridCustomerList.GetValue(Grid.ColumnProperty);
+
+            //var newvalueColumnProperty = valueColumnProperty == 0 ? 2 : 0;
+            //this.gridCustomerList.SetValue(Grid.ColumnProperty, newvalueColumnProperty);
+
+            var column = Grid.GetColumn(this.gridCustomerList);
+
+            var newColumn = column == 0 ? 2 : 0;
+            Grid.SetColumn(this.gridCustomerList,newColumn);
         }
     }
 }
